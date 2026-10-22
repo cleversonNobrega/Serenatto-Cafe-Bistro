@@ -21,5 +21,3 @@ $pdo = new PDO(
     $env['DB_USER'],
     $env['DB_PASSWORD']
 );
-
-var_dump($pdo);
