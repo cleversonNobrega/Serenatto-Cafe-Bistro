@@ -1,15 +1,12 @@
-Variáveis de ambiente e credenciais
-
+# Variáveis de ambiente e credenciais
 .env
 .env.*
 !.env.example
 
-Dependências
-
+# Dependências
 /vendor/
 
-Arquivos temporários e logs
-
+# Arquivos temporários e logs
 *.log
 .DS_Store
 Thumbs.db
