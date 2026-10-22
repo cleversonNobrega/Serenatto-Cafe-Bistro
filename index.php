@@ -1,5 +1,10 @@
 <?php
 
+require "src/conexao-db.php";
+
+$sql1 = "SELECT * FROM produtos WHERE tipo = 'café";
+$pdo->query($sql1);
+
 $produtosCafe = [
     [
         'nome' => "Café Cremoso",
