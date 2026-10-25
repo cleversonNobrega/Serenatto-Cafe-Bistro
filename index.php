@@ -5,9 +5,10 @@ require "src/conexao-db.php";
 require "src/Modelo/produto.php";
 require "src/Repositorio/produtoRepositorio.php";
 
-$produtoRepositorio = new ProdutoRepositorio($pdo);
-$dadosCafe = $produtoRepositorio->opcoesCafe();
-$dadosAlmoco = $produtoRepositorio->opcoesCafe();
+$produtosRepositorio = new ProdutoRepositorio($pdo);
+$dadosCafe = $produtosRepositorio->opcoesCafe();
+$dadosAlmoco = $produtosRepositorio->opcoesAlmoco();
+
 
 ?>
 
