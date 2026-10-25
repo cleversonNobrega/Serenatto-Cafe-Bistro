@@ -1,8 +1,10 @@
 <?php
 
-require "src/conexao-db.php";
-require "src/Modelo/produto.php";
-require "src/Repositorio/produtoRepositorio.php";
+require __DIR__ . "/src/conexao-db.php";
+require "src/Modelo/Produto.php";
+require "src/Repositorio/ProdutoRepositorio.php";
 
 $produtoRepositorio = new ProdutoRepositorio($pdo);
-$produtoRepositorio->deletar($_GET['id']);
+$produtoRepositorio->deletar($_POST['id']);
+
+header("Location: admin.php");
