@@ -1,6 +1,6 @@
 <?php
 
-require "src/conexao-bd.php";
+require __DIR__ . "/src/conexao-db.php";
 require "src/Modelo/Produto.php";
 require "src/Repositorio/ProdutoRepositorio.php";
 
