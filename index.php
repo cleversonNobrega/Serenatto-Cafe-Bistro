@@ -1,13 +1,13 @@
 <?php
 
-
-require "src/conexao-db.php";
-require "src/Modelo/produto.php";
-require "src/Repositorio/produtoRepositorio.php";
+require "src/conexao-bd.php";
+require "src/Modelo/Produto.php";
+require "src/Repositorio/ProdutoRepositorio.php";
 
 $produtosRepositorio = new ProdutoRepositorio($pdo);
 $dadosCafe = $produtosRepositorio->opcoesCafe();
 $dadosAlmoco = $produtosRepositorio->opcoesAlmoco();
+
 
 
 ?>
