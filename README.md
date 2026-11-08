@@ -17,14 +17,15 @@ O projeto tem como objetivo aplicar conceitos de desenvolvimento back-end, manip
 - 📋 Listagem de produtos cadastrados.
 - ☕ Organização dos produtos por tipo ou categoria.
 - ➕ Cadastro de novos produtos.
+- ✏️ Edição de produtos.
 - 🗑️ Exclusão de produtos.
+- 🔐 Área administrativa com tela de login.
+- 📄 Geração de PDF com o cardápio.
 - 🖼️ Associação de imagens aos produtos.
 - 💰 Exibição de preços.
 - 🗄️ Integração com banco de dados MySQL.
 - 🔌 Acesso ao banco de dados utilizando PDO.
 - 🧱 Organização do código com classes e orientação a objetos.
-
-> Observação: as funcionalidades descritas devem corresponder à versão efetivamente implementada no repositório.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -46,18 +47,27 @@ A estrutura abaixo ilustra a organização dos principais arquivos e diretórios
 Serenatto-Cafe-Bistro/
 │
 ├── index.php
+├── admin.php
+├── login.html
 ├── cadastrar-produto.php
+├── editar-produto.php
 ├── excluir-produto.php
+├── gerador-pdf.php
+├── conteudo-pdf.php
+│
+├── css/            # estilos das páginas
+├── js/             # scripts do front-end
+├── img/            # imagens dos produtos e logos
 │
 ├── src/
 │   ├── conexao-db.php
-│   │
 │   ├── Modelo/
 │   │   └── produto.php
-│   │
 │   └── Repositorio/
 │       └── produtoRepositorio.php
 │
+├── .env.example
+├── composer.json
 ├── README.md
 └── .gitignore
 ```
@@ -66,7 +76,10 @@ Serenatto-Cafe-Bistro/
 
 - **`index.php`**: página principal da aplicação.
 - **`cadastrar-produto.php`**: responsável pelo fluxo de cadastro de produtos.
+- **`editar-produto.php`**: responsável pelo fluxo de edição de produtos.
 - **`excluir-produto.php`**: responsável pelo fluxo de exclusão de produtos.
+- **`admin.php`** e **`login.html`**: área administrativa e tela de acesso.
+- **`gerador-pdf.php`** e **`conteudo-pdf.php`**: geração do PDF do cardápio.
 - **`src/conexao-db.php`**: configuração da conexão com o banco de dados.
 - **`src/Modelo/produto.php`**: classe que representa um produto e seus atributos.
 - **`src/Repositorio/produtoRepositorio.php`**: concentra operações de acesso e manipulação dos produtos no banco de dados.
@@ -115,6 +128,12 @@ COLLATE utf8mb4_unicode_ci;
 
 Verifique também se o nome do banco corresponde ao configurado na conexão PDO.
 
+Instale as dependências do projeto (como o gerador de PDF) com:
+
+```bash
+composer install
+```
+
 ### 4. Configure a conexão
 
 Abra o arquivo responsável pela conexão com o banco de dados:
@@ -123,7 +142,7 @@ Abra o arquivo responsável pela conexão com o banco de dados:
 src/conexao-db.php
 ```
 
-Configure os parâmetros de conexão de acordo com o seu ambiente:
+Copie o arquivo `.env.example` para `.env` e preencha com os dados do seu ambiente. Os parâmetros são:
 
 - Host do MySQL.
 - Nome do banco de dados.
